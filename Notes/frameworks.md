@@ -30,7 +30,9 @@ Reference: https://www.youtube.com/watch?v=cuHDQhDhvPE
 ## Material Design
 - MDL: https://getmdl.io/
 
-
+## CLIs
+- Next.js: https://nextjs.org/
+- Gatsby: https://www.gatsbyjs.com/
 
 ## Misc
 - https://progressivered.com/#/fla
