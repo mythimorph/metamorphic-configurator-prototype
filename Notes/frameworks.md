@@ -9,14 +9,21 @@
 ## Web UI
 Reference: https://www.youtube.com/watch?v=cuHDQhDhvPE
 
+- React: https://reactjs.org/
+    - https://www.youtube.com/watch?v=cuHDQhDhvPE&t=261s
+
 - Slim.js: http://slimjs.com/
     - Sandbox: https://slimjs.com/#/playground
+
 - Lit: https://lit.dev/
     - Sandbox: https://lit.dev/playground/
+
 - zUIx.js: https://zuixjs.org/
     - Examples: https://github.com/zuixjs/zuix#examples
     - Starter: https://github.com/zuixjs/zuix-web-starter
+
 - Svelte: https://svelte.dev/
+
 - Vue.js: https://vuejs.org/
 
 
