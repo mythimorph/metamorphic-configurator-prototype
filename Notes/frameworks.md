@@ -18,18 +18,18 @@
 - Vue.js: https://vuejs.org/
 
 
-# Animation
+## Animation
 - Scene.js: https://daybrush.com/scenejs/
 
-# Data/State
+## Data/State
 - RxDB: https://rxdb.info/
 - Redux: https://redux.js.org/
 
-# Material Design
+## Material Design
 - MDL: https://getmdl.io/
 
 
 
-# Misc
+## Misc
 - https://progressivered.com/#/fla
 - https://progressivered.com/#/tallyfox
