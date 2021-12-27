@@ -30,7 +30,8 @@ Reference: https://www.youtube.com/watch?v=cuHDQhDhvPE
 ## Material Design
 - MDL: https://getmdl.io/
 
-## CLIs
+## CLIs/preprocessors
+- WebPack: https://webpack.js.org/ (often part of others)
 - Next.js: https://nextjs.org/
 - Gatsby: https://www.gatsbyjs.com/
 
