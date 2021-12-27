@@ -14,6 +14,7 @@
 - zUIx.js: https://zuixjs.org/
     - Examples: https://github.com/zuixjs/zuix#examples
     - Starter: https://github.com/zuixjs/zuix-web-starter
+- Svelte: https://svelte.dev/
 - Vue.js: https://vuejs.org/
 
 
