@@ -7,6 +7,8 @@
 
 
 ## Web UI
+Reference: https://www.youtube.com/watch?v=cuHDQhDhvPE
+
 - Slim.js: http://slimjs.com/
     - Sandbox: https://slimjs.com/#/playground
 - Lit: https://lit.dev/
