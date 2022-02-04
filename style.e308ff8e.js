@@ -117,91 +117,79 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.ts":[function(require,module,exports) {
-"use strict";
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-var TickInputHandler =
-/** @class */
-function () {
-  function TickInputHandler() {
-    var inputElement = document.getElementById("ticks");
-    TickInputHandler.showResult(inputElement);
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
   }
 
-  TickInputHandler.prototype.doWork = function (event) {
-    var target = event.target;
+  return bundleURL;
+}
 
-    if (!TickInputHandler.isTickInput(target)) {
-      return;
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
     }
 
-    var inputElement = target;
-    TickInputHandler.showResult(inputElement);
-  };
+    cssTimeout = null;
+  }, 50);
+}
 
-  TickInputHandler.showResult = function (inputElement) {
-    var value = TickInputHandler.getTickInputValueAsNumber(inputElement);
-    var dateTimeOutput = document.getElementById("datetime");
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"style.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-    if (!dateTimeOutput) {
-      return;
-    }
-
-    var dateString = TickInputHandler.parseTicks(value);
-
-    if (!dateString) {
-      return;
-    }
-
-    var goodParts = /([0-9]+)/g;
-    var wrapParts = "<b>$1</b>";
-    dateString = dateString.replace(goodParts, wrapParts);
-    var firstTIndext = dateString.indexOf("T");
-    var datePart = dateString.substr(0, firstTIndext);
-    var timePart = dateString.substr(firstTIndext + 1);
-    dateTimeOutput.innerHTML = datePart + "<span class='pad'>T</span>" + timePart;
-  };
-
-  TickInputHandler.parseTicks = function (ticks) {
-    if (isNaN(ticks)) {
-      return "____-__-__T__:__:__.____Z";
-    } // convert the ticks into something javascript understands
-
-
-    var ticksSinceEpoch = ticks - TickInputHandler.epochTicks;
-    var millisecondsSinceEpoch = ticksSinceEpoch / TickInputHandler.ticksPerMillisecond;
-
-    if (millisecondsSinceEpoch > TickInputHandler.maxDateMilliseconds) {
-      //      +035210-09-17T07:18:31.111Z
-      return "9999-99-99T99:99:99:9999Z";
-    } // output the result in something the human understands
-
-
-    var date = new Date(millisecondsSinceEpoch);
-    return date.toISOString();
-  };
-
-  TickInputHandler.isTickInput = function (target) {
-    return target.tagName == 'INPUT' && target.id == 'ticks';
-  };
-
-  TickInputHandler.getTickInputValueAsNumber = function (inputElement) {
-    var valueStr = inputElement.value;
-    return Number(valueStr);
-  };
-
-  TickInputHandler.epochTicks = 621355968000000000;
-  TickInputHandler.ticksPerMillisecond = 10000;
-  TickInputHandler.maxDateMilliseconds = 8640000000000000; // http://ecma-international.org/ecma-262/5.1/#sec-15.9.1.1
-
-  return TickInputHandler;
-}();
-
-window.onload = function () {
-  var handler = new TickInputHandler();
-  document.addEventListener("keyup", handler.doWork);
-};
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -405,5 +393,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.ts"], null)
-//# sourceMappingURL=/src.77de5100.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/style.e308ff8e.js.map
