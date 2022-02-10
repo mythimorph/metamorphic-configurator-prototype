@@ -1,17 +1,21 @@
 {
-    "files": [
-        "src/*"
-    ],
+    "name": "metamorphic-prototype",
+    "version": "1.0.0",
+    "description": "Metamorphic configurator prototype",
+    "main": "src/js/index.ts",
     "scripts": {
-        "start": "parcel serve ./src/index.html src/sandbox/index.html",
-        "build": "cross-env NODE_ENV=production parcel build ./src/index.html --public-url .",
-        "deploy": "gh-pages -d dist"
+        "start": "snowpack dev",
+        "prebuild": "tsc",
+        "build": "snowpack build",
+        "clean": "node -e \"require('fs').rmSync('./_BUILD/', {recursive: true, force: true} );\"",
+        "clean-build": "yarn clean && yarn build && echo 'OUTPUT IS IN _BUILD'"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "@snowpack/plugin-typescript": "^1.2.1"
     },
     "devDependencies": {
-        "cross-env": "^5.2.0",
-        "gh-pages": "^1.2.0",
-        "parcel-bundler": "^1.9.7",
-        "typescript": "^2.9.2"
-    },
-    "license": "MIT"
+        "snowpack": "^3.3.7",
+        "typescript": "^4.5.5"
+    }
 }
