@@ -1,11 +1,12 @@
 module.exports = {
+    
     mount: {
         public: {url: "/", static: true, resolve: false },
         src: {url: "/assets/" }
     },
     devOptions: {
         port: 8000,
-        open: "none"
+        open: "chrome"
     },
     buildOptions: {
         out: "_BUILD"
