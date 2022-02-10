@@ -18,5 +18,7 @@ module.exports = {
     },
     plugins: [
         '@snowpack/plugin-typescript',
+        '@snowpack/plugin-dotenv',
+        '@snowpack/plugin-sass',
     ]
 };
