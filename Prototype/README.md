@@ -1,3 +1,11 @@
+# Quick Ref Docs
+
+- Typescript | [Docs](https://www.typescriptlang.org/docs/) | [Quickrefs](https://www.typescriptlang.org/cheatsheets) |
+- Snowpack | [Docs](https://www.snowpack.dev/tutorials/quick-start) | [Config](https://www.snowpack.dev/reference/configuration) | [CLI](https://www.snowpack.dev/reference/cli-command-line-interface) |
+- UIkit | [Docs](https://getuikit.com/docs/introduction) | [Sample Layouts](https://github.com/zzseba78/Kick-Off) | 
+- Astro Site Generator (not yet used) | [Docs](https://docs.astro.build/) |
+
+
 # Project Paths
 
 - **`Prototype/`** - the directory containing the prototype
