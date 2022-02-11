@@ -1,8 +1,8 @@
 module.exports = {
-    
     mount: {
         public: {url: "/", static: true, resolve: false },
-        src: {url: "/assets/" }
+        data: {url: "/data/", static: true, resolve: false },
+        src: {url: "/assets/" },
     },
     devOptions: {
         port: 8000,
