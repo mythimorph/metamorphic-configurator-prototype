@@ -21,13 +21,38 @@
     <script src="/assets/vendor/uikit@3.11.1/uikit.min.js"></script>
     <script src="/assets/vendor/uikit@3.11.1/uikit-icons.min.js"></script>
 
+    <!--  -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <style>
+        header {
+            background-color: red;
+            border-bottom: 1px solid rgb(0, 255, 0);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="uk-container">
+
+    <header class="uk-sticky" data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top">
+        <div class="uk-container">
+            <nav id="navbar" data-uk-navbar="mode: click;" class="uk-navbar">
+                <div class="uk-navbar-left"></div>
+                <div class="uk-navbar-center">
+                    <a class="uk-navbar-item uk-logo" href="#">Logo</a>
+                </div>
+                <div class="uk-navbar-right"></div>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="uk-sticky-placeholder"></div>
+
+    <div class="uk-section uk-container">
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <h1>Prototype</h1>
+
+        <div class=""></div>
     </div>
 
     <script type="module" src="/assets/js/index.js"></script>

@@ -5,7 +5,7 @@ export class ConfigData {
 }
 
 export class ConfigOptionDefinition {
-    name: string = "";
+    id: string = "";
     description?: string;
     path: string = "";
     data?: Array<any> = new Array<any>();

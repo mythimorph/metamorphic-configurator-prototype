@@ -1,6 +1,17 @@
  [
     {
-        "name" : "design",
-        "thumbnail" : ""
+        "id" : "sticker",
+        "name" : "Sticker",
+        "thumbnail" : "data/products/sticker.png"
+    },
+    {
+        "id" : "shirt",
+        "name" : "Shirt",
+        "thumbnail": "data/products/shirt.png"
+    },
+    {
+        "id" : "sign",
+        "name" : "Sign",
+        "thumbnail": "data/products/sign.png"
     }
 ]

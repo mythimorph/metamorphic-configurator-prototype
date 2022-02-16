@@ -3,15 +3,21 @@ import { ConfigData, ConfigOptionDefinition } from './Config';
 
 
 export class ConfiguratorApp {
+
+    public element: HTMLElement;
+
     public configPath: string = "";
-    public config: ConfigData = new ConfigData();
+    public config: ConfigData;
 
-    public constructor() {
 
+    public constructor(element:HTMLElement) {
+        this.element = element;
+
+        this.config = new ConfigData();
     }
 
-    private LoadOptionDefinition(definition:ConfigOptionDefinition) : Promise<Array<any>> {
-        return Utils.LoadFromJSON<Array<any>>(definition.path);
+    public Render() : void {
+
     }
 
     public LoadConfig(configPath: string) : Promise<ConfigData> {
@@ -32,7 +38,7 @@ export class ConfiguratorApp {
                         app.config.option_definitions.forEach( 
                             (optionDef:ConfigOptionDefinition) => {
                                 console.log(`- loading: ${optionDef.path}`);
-                                optionDefLoads.push(this.LoadOptionDefinition(optionDef));
+                                optionDefLoads.push(Utils.LoadFromJSON<Array<any>>(optionDef.path));
                             }
                         );
 
@@ -58,34 +64,4 @@ export class ConfiguratorApp {
             }
         );
     }
-
-/*
-    public LoadItems(path:string) : Promise<any> {
-        const app = this;
-        return new Promise(
-            (
-                resolve: (retVal:any) => void,
-                reject: (retErr:any) => void
-            ) => {
-                if(app.items.has(path)){
-                    reject(`test ${path} is already loaded or loading`);
-                    return;
-                }
-                app.items.set(path, {});
-
-                Utils.LoadFromJSON(path)
-                    .then((value: any) => {
-                        app.items.set(path, value);
-                        resolve(value);
-                        return;
-                    })
-                    .catch((err:any) => {
-                        reject(err);
-                        return;
-                    });
-            }
-        )
-    }
-*/
-
 };

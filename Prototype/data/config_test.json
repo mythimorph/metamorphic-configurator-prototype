@@ -1,12 +1,12 @@
 {
     "option_definitions": [
         {
-            "name": "products",
+            "id": "products",
             "description": "Choose a Product",
             "path": "data/products/products.json"
         },
         {
-            "name": "designs",
+            "id": "designs",
             "description": "Choose a Design",
             "path": "data/designs/designs.json"
         }
