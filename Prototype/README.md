@@ -2,9 +2,11 @@
 
 - Typescript | [Docs](https://www.typescriptlang.org/docs/) | [Quickrefs](https://www.typescriptlang.org/cheatsheets) |
 - Snowpack | [Docs](https://www.snowpack.dev/tutorials/quick-start) | [Config](https://www.snowpack.dev/reference/configuration) | [CLI](https://www.snowpack.dev/reference/cli-command-line-interface) |
-- UIkit | [Docs](https://getuikit.com/docs/introduction) | [Sample Layouts](https://github.com/zzseba78/Kick-Off) | 
+- UIkit | [Docs](https://getuikit.com/docs/introduction) | [Samples](https://getuikit.com/assets/uikit/tests/index.html) | [Layouts](https://github.com/zzseba78/Kick-Off) |
+- Lit | [Docs](https://lit.dev/docs/getting-started/) | [Playground](https://lit.dev/playground/) | [Sample Proj](https://github.com/lit/lit-element-starter-ts) |
 - Astro Site Generator (not yet used) | [Docs](https://docs.astro.build/) |
 
+<br />
 
 # Project Paths
 
@@ -23,6 +25,8 @@ _NOTE: these directories and files are local only and should not be added to the
 - `Prototype/`**`_BUILD/`** - is created locally after running `yarn build` (see below).
 - `Prototype/`**`yarn.lock`** - is created locally by yarn for managing dependencies installed in node_modules.
 
+<br />
+
 # Tools and Dependencies
 
 ## Build tools
@@ -37,8 +41,10 @@ _NOTE: these directories and files are local only and should not be added to the
 ## Build Dependencies
 
 These are defined in `/package.json`'s `devDependencies`
-* **typescript** - Manages our javascript source code
-* **snowpack** - Handles static page building and local testing
+* **TypeScript** - Manages our javascript source code
+* **Snowpack** - Handles static page building and local testing
+
+<br />
 
 ## Web Dependencies
 
@@ -46,7 +52,12 @@ Stored in `/public/assets/vendor`
 
 * **UIkit** - basic css/javascript UI framework
     * Docs: https://getuikit.com/docs/introduction
+    * Samples: https://getuikit.com/assets/uikit/tests/index.html
+* **Lit** - Framework for data binding and component creation
+    * Docs: https://lit.dev/docs/getting-started/
+    * Playground: https://lit.dev/playground/
 
+<br />
 
 # Command Quick Reference
 
